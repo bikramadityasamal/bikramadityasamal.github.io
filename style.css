@@ -31,7 +31,6 @@
     --transition: all 0.3s ease;
 }
 
-
 /* ================= RESET ================= */
 
 * {
@@ -43,15 +42,17 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    width: 100%;
 }
 
 body {
+    width: 100%;
+    min-width: 320px;
     background: var(--background);
     color: var(--text);
     font-family: var(--font-main);
     line-height: 1.7;
-    overflow-x: hidden;
-    min-width: 320px;
+    overflow-x: clip;
 }
 
 a {
@@ -83,7 +84,6 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
-
 /* ================= SCROLLBAR ================= */
 
 ::-webkit-scrollbar {
@@ -98,7 +98,6 @@ a:focus-visible {
     background: linear-gradient(var(--primary), var(--secondary));
     border-radius: 20px;
 }
-
 
 /* ================= SCROLL PROGRESS ================= */
 
@@ -116,7 +115,6 @@ a:focus-visible {
     );
     z-index: 9999;
 }
-
 
 /* ================= BACKGROUND EFFECTS ================= */
 
@@ -157,7 +155,6 @@ a:focus-visible {
     mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
-
 /* ================= COMMON ================= */
 
 .section-container {
@@ -194,7 +191,6 @@ a:focus-visible {
     letter-spacing: 2.5px;
     margin-bottom: 10px;
 }
-
 
 /* ================= NAVBAR ================= */
 
@@ -244,11 +240,15 @@ a:focus-visible {
 .navigation {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 22px;
 }
 
 .navigation a {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
     color: var(--text-secondary);
     font-size: 12px;
     font-weight: 600;
@@ -256,8 +256,14 @@ a:focus-visible {
     transition: var(--transition);
 }
 
+/* Icons visible on desktop and mobile */
+
 .navigation a i {
-    display: none;
+    display: inline-block;
+    width: 14px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--primary);
 }
 
 .navigation a::after {
@@ -313,7 +319,6 @@ a:focus-visible {
     font-size: 18px;
 }
 
-
 /* ================= HERO ================= */
 
 .hero {
@@ -322,7 +327,7 @@ a:focus-visible {
     padding-bottom: 100px;
 
     display: grid;
-    grid-template-columns: 1.08fr 0.92fr;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     align-items: center;
     gap: 55px;
 
@@ -331,6 +336,7 @@ a:focus-visible {
 
 .hero-content {
     max-width: 650px;
+    min-width: 0;
 }
 
 .availability-status {
@@ -379,6 +385,7 @@ a:focus-visible {
     font-weight: 800;
     line-height: 1.12;
     letter-spacing: -3px;
+    overflow-wrap: break-word;
 }
 
 .hero-description {
@@ -392,7 +399,6 @@ a:focus-visible {
 .hero-description strong {
     color: white;
 }
-
 
 /* ================= HERO BUTTONS ================= */
 
@@ -458,7 +464,6 @@ a:focus-visible {
     background: linear-gradient(120deg, #20a995, #398ee0);
     box-shadow: 0 10px 25px rgba(32,169,149,0.25);
 }
-
 
 /* ================= SOCIAL LINKS ================= */
 
@@ -533,11 +538,11 @@ a:focus-visible {
     color: var(--pink);
 }
 
-
 /* ================= HERO PHOTO AREA ================= */
 
 .hero-image-area {
     min-height: 540px;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
@@ -599,7 +604,6 @@ a:focus-visible {
     color: var(--text-muted);
 }
 
-
 /* ================= NAME CAPTION ================= */
 
 .image-caption.name-only-caption {
@@ -648,7 +652,6 @@ a:focus-visible {
     color: transparent;
 }
 
-
 /* ================= PHOTO DECORATION ================= */
 
 .image-decoration {
@@ -688,7 +691,6 @@ a:focus-visible {
     border-radius: 50%;
     background: var(--secondary);
 }
-
 
 /* ================= HERO INFORMATION CARDS ================= */
 
@@ -758,7 +760,6 @@ a:focus-visible {
     overflow-wrap: anywhere;
 }
 
-
 /* ================= SCROLL INDICATOR ================= */
 
 .scroll-indicator {
@@ -779,7 +780,6 @@ a:focus-visible {
     color: var(--primary);
     animation: arrowDown 1.5s infinite;
 }
-
 
 /* ================= EXPERTISE STRIP ================= */
 
@@ -815,7 +815,6 @@ a:focus-visible {
     color: var(--primary);
 }
 
-
 /* ================= SECTION HEADINGS ================= */
 
 .section-heading {
@@ -848,7 +847,6 @@ a:focus-visible {
     line-height: 1.2;
     letter-spacing: -2px;
 }
-
 
 /* ================= ABOUT ================= */
 
@@ -934,7 +932,6 @@ a:focus-visible {
     color: var(--text-muted);
     margin-top: 5px;
 }
-
 
 /* ================= EXPERIENCE TIMELINE ================= */
 
@@ -1068,7 +1065,6 @@ a:focus-visible {
     background: rgba(255,255,255,0.035);
 }
 
-
 /* ================= EXPERTISE CARDS ================= */
 
 .expertise-grid {
@@ -1166,7 +1162,6 @@ a:focus-visible {
     border-color: var(--primary);
 }
 
-
 /* ================= EDUCATION ================= */
 
 .education-layout {
@@ -1256,7 +1251,6 @@ a:focus-visible {
     color: var(--text-muted);
 }
 
-
 /* ================= PERSONAL PROFILE ================= */
 
 .personal-layout {
@@ -1327,7 +1321,6 @@ a:focus-visible {
     font-size: 10px;
     color: var(--text-secondary);
 }
-
 
 /* ================= CONTACT ================= */
 
@@ -1469,8 +1462,8 @@ a:focus-visible {
     color: var(--primary);
     font-size: 12px;
     flex-shrink: 0;
+    transition: var(--transition);
 }
-
 
 /* CONTACT ICON INTERACTIONS */
 
@@ -1495,11 +1488,6 @@ a:focus-visible {
 .contact-item:hover .contact-arrow {
     transform: translate(3px, -3px);
 }
-
-.contact-arrow {
-    transition: var(--transition);
-}
-
 
 /* ================= FOOTER ================= */
 
@@ -1577,7 +1565,6 @@ a:focus-visible {
     color: var(--background);
 }
 
-
 /* ================= REVEAL ANIMATION ================= */
 
 .reveal {
@@ -1590,7 +1577,6 @@ a:focus-visible {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /* ================= KEYFRAMES ================= */
 
@@ -1648,7 +1634,6 @@ a:focus-visible {
     }
 }
 
-
 /* =========================================================
    TABLET RESPONSIVE
    ========================================================= */
@@ -1656,11 +1641,11 @@ a:focus-visible {
 @media (max-width: 1000px) {
 
     .navigation {
-        gap: 16px;
+        gap: 12px;
     }
 
     .navigation a {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .nav-contact {
@@ -1692,7 +1677,6 @@ a:focus-visible {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 
 /* =========================================================
    MOBILE NAVIGATION + LAYOUT
@@ -1791,11 +1775,10 @@ a:focus-visible {
         display: none;
     }
 
-
     /* Hero layout */
 
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         padding-top: 35px;
         padding-bottom: 85px;
         gap: 20px;
@@ -1811,10 +1794,12 @@ a:focus-visible {
     .hero-content {
         grid-row: 2;
         max-width: 100%;
+        width: 100%;
     }
 
     .hero h1 {
         font-size: clamp(43px, 9vw, 58px);
+        letter-spacing: -2px;
     }
 
     .profile-image-card {
@@ -1836,7 +1821,6 @@ a:focus-visible {
         bottom: 22px;
     }
 
-
     /* Sections */
 
     .section {
@@ -1844,17 +1828,17 @@ a:focus-visible {
     }
 
     .about-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 35px;
     }
 
     .education-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 45px;
     }
 
     .contact-panel {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         padding: 30px;
         gap: 30px;
     }
@@ -1870,7 +1854,6 @@ a:focus-visible {
         width: 100%;
     }
 }
-
 
 /* =========================================================
    SMALL MOBILE
@@ -1960,29 +1943,37 @@ a:focus-visible {
         font-size: 9px;
     }
 
-
-    /* Hero buttons */
+    /* Hero buttons: one line on mobile */
 
     .hero-buttons {
         display: flex;
-        flex-wrap: wrap;
-        gap: 9px;
+        flex-direction: row;
+        flex-wrap: nowrap;
         align-items: stretch;
+        gap: 6px;
+        width: 100%;
+        min-width: 0;
     }
 
-    .hero-buttons .button,
-    .hero-buttons .btn-download-cv {
+    .hero-buttons > a {
+        flex: 1 1 0;
+        min-width: 0;
+        width: 0;
         min-height: 48px;
         height: 48px;
-        width: auto;
 
-        padding: 0 12px;
+        padding: 0 4px;
+        gap: 4px;
 
-        font-size: 10px;
+        font-size: clamp(7px, 2.1vw, 10px);
         white-space: nowrap;
-        flex-shrink: 0;
+        text-align: center;
     }
 
+    .hero-buttons > a i {
+        font-size: 9px;
+        flex-shrink: 0;
+    }
 
     /* Section headings */
 
@@ -2022,11 +2013,10 @@ a:focus-visible {
         font-size: 9px;
     }
 
-
     /* Experience */
 
     .experience-item {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 8px;
         padding-bottom: 25px;
     }
@@ -2048,11 +2038,10 @@ a:focus-visible {
         font-size: 19px;
     }
 
-
     /* Expertise */
 
     .expertise-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .expertise-card {
@@ -2060,13 +2049,11 @@ a:focus-visible {
         padding: 22px;
     }
 
-
     /* Personal profile */
 
     .personal-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
-
 
     /* Contact */
 
@@ -2091,9 +2078,7 @@ a:focus-visible {
     .contact-text strong {
         font-size: 9px;
     }
-
 }
-
 
 /* =========================================================
    EXTRA SMALL PHONES
@@ -2129,16 +2114,19 @@ a:focus-visible {
     }
 
     .hero-buttons {
-        gap: 7px;
+        gap: 4px;
     }
 
-    .hero-buttons .button,
-    .hero-buttons .btn-download-cv {
+    .hero-buttons > a {
         min-height: 45px;
         height: 45px;
-        padding: 0 9px;
-        font-size: 9px;
-        gap: 6px;
+        padding: 0 2px;
+        font-size: 7px;
+        gap: 3px;
+    }
+
+    .hero-buttons > a i {
+        font-size: 8px;
     }
 
     .navigation a {
@@ -2160,7 +2148,6 @@ a:focus-visible {
     }
 }
 
-
 /* =========================================================
    ACCESSIBILITY
    ========================================================= */
@@ -2180,41 +2167,4 @@ a:focus-visible {
         opacity: 1;
         transform: none;
     }
-}
-@media (max-width: 760px) {
-    .hero-buttons {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 8px;
-    }
-
-    .hero-buttons .btn {
-        flex: 1;
-        min-width: 0;
-        padding: 14px 8px;
-        font-size: 11px;
-        white-space: nowrap;
-    }
-}
-body {
-    animation: websiteFadeIn 0.8s ease-in-out;
-}
-
-@keyframes websiteFadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-* {
-    box-sizing: border-box;
 }

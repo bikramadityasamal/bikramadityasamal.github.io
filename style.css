@@ -2181,3 +2181,18 @@ a:focus-visible {
         transform: none;
     }
 }
+@media (max-width: 760px) {
+    .hero-buttons {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .hero-buttons .btn {
+        flex: 1;
+        min-width: 0;
+        padding: 14px 8px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+}

@@ -2285,3 +2285,34 @@ ul {
         padding-right: 9px !important;
     }
 }
+/* FINAL NAME TAG FIX */
+
+.image-caption.name-only-caption {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    left: 8px !important;
+    right: 8px !important;
+    padding: 9px 4px !important;
+}
+
+.image-caption.name-only-caption strong {
+    display: block !important;
+    width: 100% !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+}
+
+@media (max-width: 760px) {
+    .image-caption.name-only-caption {
+        padding: 8px 3px !important;
+    }
+
+    .image-caption.name-only-caption strong {
+        font-size: clamp(11px, 3.4vw, 14px) !important;
+    }
+}

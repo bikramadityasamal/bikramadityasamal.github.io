@@ -2139,3 +2139,50 @@ ul {
         padding: 6px 7px !important;
     }
 }
+/* FINAL FIX — MOBILE NAME ONE LINE */
+
+@media (max-width: 760px) {
+
+    .image-caption {
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 14px !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 9px 5px !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .image-caption div:last-child {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .image-caption strong {
+        display: block !important;
+        width: 100% !important;
+
+        font-size: clamp(11px, 3.3vw, 14px) !important;
+        font-weight: 800 !important;
+
+        letter-spacing: -0.3px !important;
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+
+        text-align: center !important;
+    }
+
+    .image-caption strong br {
+        display: none !important;
+    }
+}

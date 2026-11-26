@@ -2196,15 +2196,3 @@ a:focus-visible {
         white-space: nowrap;
     }
 }
-body {
-    animation: websiteFadeIn 0.8s ease-in-out;
-}
-
-@keyframes websiteFadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}

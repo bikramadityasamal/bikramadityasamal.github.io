@@ -2973,3 +2973,66 @@ ul {
     transform: translateY(-2px);
     align-self: center;
 }
+/* =========================================
+   MOBILE MENU — SMALL RIGHT SIDE POPUP
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .navigation {
+        display: none;
+        position: fixed;
+        top: 92px;
+        right: 18px;
+        left: auto;
+        width: min(270px, calc(100vw - 36px));
+        max-height: 65vh;
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        background: #19263b;
+        border: 1px solid rgba(112,183,255,0.25);
+        border-radius: 12px;
+        box-shadow: 0 15px 45px rgba(0,0,0,0.45);
+        z-index: 2000;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation a {
+        display: block;
+        padding: 13px 14px;
+        font-size: 14px;
+        border-radius: 7px;
+    }
+
+    .navigation a:hover {
+        background: rgba(112,183,255,0.10);
+    }
+
+    .navigation a::after {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 2001;
+    }
+
+    /* Communication & Data card adjustment */
+    .floating-focus {
+        left: 5px;
+        bottom: 12px;
+        transform: scale(0.88);
+        transform-origin: left bottom;
+    }
+
+    .floating-focus strong {
+        font-size: 9px;
+    }
+}

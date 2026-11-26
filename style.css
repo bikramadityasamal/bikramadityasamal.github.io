@@ -1447,27 +1447,51 @@ ul {
         z-index: 2101;
     }
 
-    /* Compact right-side popup menu */
-    .navigation {
-        display: none;
-        position: fixed;
-        top: 82px;
-        right: 16px;
-        left: auto;
-        width: 250px;
-        max-width: calc(100vw - 32px);
-        max-height: 70vh;
-        overflow-y: auto;
-        padding: 12px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 3px;
-        background: #19263b;
-        border: 1px solid rgba(112,183,255,0.35);
-        border-radius: 12px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.45);
-        z-index: 2100;
-    }
+    /* EXTRA COMPACT MOBILE MENU */
+
+.navigation {
+    display: none;
+    position: fixed;
+    top: 82px;
+    right: 12px;
+    left: auto;
+    width: max-content;
+    min-width: 0;
+    max-width: calc(100vw - 24px);
+    height: auto;
+    padding: 4px;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #19263b;
+    border: 1px solid rgba(112,183,255,0.3);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    z-index: 2100;
+}
+
+.navigation.active {
+    display: flex;
+}
+
+.navigation a {
+    display: block;
+    padding: 5px 9px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.25;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.navigation a::after {
+    display: none;
+}
+
+.navigation a:hover {
+    background: rgba(112,183,255,0.1);
+}
 
     .navigation.active {
         display: flex;
@@ -1879,4 +1903,63 @@ ul {
         font-size: 18px;
         letter-spacing: 0.4px;
     }
+}
+/* =====================================
+   SAME PREMIUM NAME DESIGN
+   DESKTOP + MOBILE
+   ===================================== */
+
+.image-caption {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 18px 12px;
+
+    background: rgba(16, 24, 39, 0.96);
+    border: 1px solid rgba(112, 183, 255, 0.45);
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+}
+
+.caption-initials {
+    display: none !important;
+}
+
+.image-caption div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.image-caption small {
+    display: none !important;
+}
+
+.image-caption strong {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-align: center;
+
+    background: linear-gradient(
+        100deg,
+        #ffffff,
+        #83caff,
+        #a994ff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }

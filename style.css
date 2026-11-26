@@ -1963,3 +1963,179 @@ ul {
     background-clip: text;
     color: transparent;
 }
+/* =================================================
+   FINAL PORTFOLIO FINISHING DESIGN
+   Compact Icon Menu + Matching Name Tag
+   ================================================= */
+
+/* ---------- DESKTOP NAME ---------- */
+
+.caption-initials,
+.image-caption small {
+    display: none !important;
+}
+
+.image-caption {
+    justify-content: center !important;
+    align-items: center !important;
+    background: rgba(16, 24, 39, 0.96) !important;
+    border: 1px solid rgba(112,183,255,0.45) !important;
+    border-radius: 12px !important;
+    padding: 14px 8px !important;
+}
+
+.image-caption div:last-child {
+    display: flex !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.image-caption strong {
+    display: block !important;
+    width: 100% !important;
+    font-family: var(--font-heading) !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.3px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+
+    background: linear-gradient(
+        100deg,
+        #ffffff,
+        #83caff,
+        #a994ff
+    ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* ---------- FINAL COMPACT MOBILE MENU ---------- */
+
+@media (max-width: 760px) {
+
+    .menu-toggle {
+        display: block !important;
+        position: relative !important;
+        z-index: 2201 !important;
+    }
+
+    .navigation {
+        display: none !important;
+
+        position: fixed !important;
+        top: 82px !important;
+        right: 12px !important;
+        left: auto !important;
+
+        width: max-content !important;
+        min-width: 0 !important;
+        max-width: calc(100vw - 24px) !important;
+        height: auto !important;
+
+        padding: 4px !important;
+        margin: 0 !important;
+
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+
+        background: #19263b !important;
+        border: 1px solid rgba(112,183,255,0.35) !important;
+        border-radius: 9px !important;
+
+        box-shadow: 0 8px 22px rgba(0,0,0,0.38) !important;
+        z-index: 2200 !important;
+    }
+
+    .navigation.active {
+        display: flex !important;
+    }
+
+    .navigation a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: max-content !important;
+        max-width: 100% !important;
+
+        padding: 7px 8px !important;
+        margin: 0 !important;
+        gap: 8px !important;
+
+        font-size: 12px !important;
+        line-height: 1.25 !important;
+        white-space: nowrap !important;
+
+        border-radius: 5px !important;
+    }
+
+    .navigation a i {
+        display: inline-block !important;
+        width: 14px !important;
+        min-width: 14px !important;
+        text-align: center !important;
+        font-size: 12px !important;
+        color: #70b7ff !important;
+    }
+
+    .navigation a::after {
+        display: none !important;
+    }
+
+    .navigation a:hover {
+        background: rgba(112,183,255,0.12) !important;
+    }
+
+    .nav-contact {
+        display: none !important;
+    }
+
+    /* NAME: SAME DESIGN, ONE LINE ON MOBILE */
+
+    .image-caption {
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 14px !important;
+        padding: 12px 4px !important;
+    }
+
+    .image-caption strong {
+        font-size: clamp(14px, 4vw, 17px) !important;
+        letter-spacing: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    /* Floating cards stay in photo area */
+
+    .floating-role {
+        right: 8px !important;
+        top: 8px !important;
+    }
+
+    .floating-focus {
+        left: 8px !important;
+        bottom: 8px !important;
+        animation: none !important;
+    }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 380px) {
+
+    .image-caption strong {
+        font-size: 14px !important;
+    }
+
+    .navigation a {
+        font-size: 11px !important;
+        padding: 6px 7px !important;
+    }
+}

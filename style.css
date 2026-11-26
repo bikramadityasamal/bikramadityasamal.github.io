@@ -2186,3 +2186,102 @@ ul {
         display: none !important;
     }
 }
+/* =========================================
+   FINAL MOBILE FIX — NAME + BUTTONS
+   ========================================= */
+
+@media (max-width: 760px) {
+
+    /* NAME — FORCE SINGLE LINE */
+
+    .image-caption {
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 14px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 9px 4px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .image-caption .caption-initials,
+    .image-caption small {
+        display: none !important;
+    }
+
+    .image-caption div:last-child {
+        display: flex !important;
+        width: auto !important;
+        max-width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .image-caption strong {
+        display: inline-block !important;
+        width: max-content !important;
+        max-width: none !important;
+
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0 !important;
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        text-align: center !important;
+    }
+
+    .image-caption strong br {
+        display: none !important;
+    }
+
+    /* BUTTONS — KEEP TEXT ON ONE LINE */
+
+    .hero-buttons {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .hero-buttons .button,
+    .hero-buttons .btn-download-cv {
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+        flex-shrink: 0 !important;
+
+        font-size: 10px !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+
+        min-height: 54px !important;
+        height: 54px !important;
+        width: auto !important;
+    }
+
+    .hero-buttons .button i,
+    .hero-buttons .btn-download-cv i {
+        flex-shrink: 0 !important;
+    }
+}
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 360px) {
+
+    .image-caption strong {
+        font-size: 11px !important;
+    }
+
+    .hero-buttons .button,
+    .hero-buttons .btn-download-cv {
+        font-size: 9px !important;
+        padding-left: 9px !important;
+        padding-right: 9px !important;
+    }
+}

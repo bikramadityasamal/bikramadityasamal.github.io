@@ -1,6 +1,7 @@
 /* =========================================================
    BIKRAMADITYA SAMAL | PROFESSIONAL PORTFOLIO
    Responsive Corporate Design
+   Consolidated CSS | SEO-friendly | Accessible
    ========================================================= */
 
 /* ================= ROOT VARIABLES ================= */
@@ -63,8 +64,8 @@ main {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 button {
@@ -286,12 +287,14 @@ a:focus-visible {
 }
 
 .navigation a:hover,
-.navigation a.active-link {
+.navigation a.active-link,
+.navigation a.active {
     color: var(--primary);
 }
 
 .navigation a:hover::after,
-.navigation a.active-link::after {
+.navigation a.active-link::after,
+.navigation a.active::after {
     width: 100%;
 }
 
@@ -1080,7 +1083,7 @@ a:focus-visible {
 
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
 }
 
@@ -1173,7 +1176,7 @@ a:focus-visible {
     border-color: var(--primary);
 }
 
-/* ================= SERVICES ================= */
+/* ================= FREELANCE SERVICES ================= */
 
 .section-intro {
     max-width: 780px;
@@ -1187,19 +1190,22 @@ a:focus-visible {
     line-height: 1.9;
 }
 
+/* Three columns on desktop: balanced for nine service cards */
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .service-card {
     min-width: 0;
     min-height: 245px;
-    padding: 24px 20px;
+    height: 100%;
+    padding: 25px;
 
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 16px;
 
     background: linear-gradient(
         145deg,
@@ -1223,7 +1229,7 @@ a:focus-visible {
     display: grid;
     place-items: center;
 
-    border-radius: 10px;
+    border-radius: 12px;
     background: rgba(112,183,255,0.12);
     color: var(--primary);
 
@@ -1260,16 +1266,23 @@ a:focus-visible {
 
 .service-card h3 {
     font-family: var(--font-heading);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.45;
     margin-bottom: 11px;
 }
 
 .service-card p {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-secondary);
     line-height: 1.8;
+}
+
+/* Website & Portfolio Design service card */
+
+.service-card:nth-child(9) .service-icon {
+    color: var(--primary);
+    background: rgba(112,183,255,0.12);
 }
 
 .services-cta {
@@ -1829,7 +1842,10 @@ a:focus-visible {
         gap: 35px;
     }
 
-    .expertise-grid,
+    .expertise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .services-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1929,7 +1945,8 @@ a:focus-visible {
     }
 
     .navigation a:hover,
-    .navigation a.active-link {
+    .navigation a.active-link,
+    .navigation a.active {
         background: rgba(112,183,255,0.12);
     }
 
@@ -2073,7 +2090,7 @@ a:focus-visible {
    SMALL MOBILE
    ========================================================= */
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
 
     .section-container {
         width: 90%;
@@ -2156,7 +2173,7 @@ a:focus-visible {
         font-size: 9px;
     }
 
-    /* Hero buttons: one row */
+    /* Hero buttons */
 
     .hero-buttons {
         gap: 5px;
@@ -2237,7 +2254,7 @@ a:focus-visible {
         font-size: 19px;
     }
 
-    /* Expertise and Services */
+    /* Expertise and services */
 
     .expertise-grid,
     .services-grid {
@@ -2252,9 +2269,49 @@ a:focus-visible {
     .service-card {
         min-height: auto;
         padding: 22px;
+        border-radius: 18px;
+
+        background: linear-gradient(
+            135deg,
+            rgba(35,55,90,0.75),
+            rgba(20,29,52,0.95)
+        );
+
+        border: 1px solid rgba(110,160,255,0.22);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    }
+
+    .service-card:active {
+        transform: scale(0.98);
+        border-color: rgba(110,160,255,0.7);
+    }
+
+    .service-card h3 {
+        font-size: 19px;
+        line-height: 1.4;
+        margin: 14px 0 9px;
+        color: #ffffff;
+    }
+
+    .service-card p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #c5d0e3;
     }
 
     .service-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+
+        background: linear-gradient(
+            135deg,
+            #398bff,
+            #9270ff
+        );
+
+        color: #ffffff;
+        font-size: 20px;
         margin-bottom: 17px;
     }
 
@@ -2393,104 +2450,4 @@ a:focus-visible {
         opacity: 1;
         transform: none;
     }
-}
-/* Desktop */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* Service cards */
-.service-card {
-  padding: 25px;
-  border-radius: 16px;
-  height: 100%;
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .service-card {
-    padding: 20px;
-  }
-}
-/* PREMIUM FREELANCE SERVICES - MOBILE ONLY */
-
-@media (max-width: 600px) {
-
-  .services-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-  }
-
-  .service-card {
-    position: relative;
-    padding: 22px !important;
-    margin-bottom: 0 !important;
-    border-radius: 18px !important;
-
-    background: linear-gradient(
-      135deg,
-      rgba(35, 55, 90, 0.75),
-      rgba(20, 29, 52, 0.95)
-    ) !important;
-
-    border: 1px solid rgba(110, 160, 255, 0.22) !important;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-
-    transition: transform 0.3s ease,
-                border-color 0.3s ease;
-  }
-
-  .service-card:active {
-    transform: scale(0.98);
-    border-color: rgba(110, 160, 255, 0.7) !important;
-  }
-
-  .service-card h3 {
-    font-size: 19px !important;
-    line-height: 1.4 !important;
-    margin: 14px 0 9px !important;
-    color: #ffffff !important;
-  }
-
-  .service-card p {
-    font-size: 14px !important;
-    line-height: 1.8 !important;
-    color: #c5d0e3 !important;
-  }
-
-  .service-card i,
-  .service-card .icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-
-    background: linear-gradient(
-      135deg,
-      #398bff,
-      #9270ff
-    );
-
-    color: #ffffff;
-    font-size: 20px;
-  }
 }

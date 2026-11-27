@@ -2426,3 +2426,71 @@ a:focus-visible {
     padding: 20px;
   }
 }
+/* PREMIUM FREELANCE SERVICES - MOBILE ONLY */
+
+@media (max-width: 600px) {
+
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .service-card {
+    position: relative;
+    padding: 22px !important;
+    margin-bottom: 0 !important;
+    border-radius: 18px !important;
+
+    background: linear-gradient(
+      135deg,
+      rgba(35, 55, 90, 0.75),
+      rgba(20, 29, 52, 0.95)
+    ) !important;
+
+    border: 1px solid rgba(110, 160, 255, 0.22) !important;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+  }
+
+  .service-card:active {
+    transform: scale(0.98);
+    border-color: rgba(110, 160, 255, 0.7) !important;
+  }
+
+  .service-card h3 {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+    margin: 14px 0 9px !important;
+    color: #ffffff !important;
+  }
+
+  .service-card p {
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    color: #c5d0e3 !important;
+  }
+
+  .service-card i,
+  .service-card .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+
+    background: linear-gradient(
+      135deg,
+      #398bff,
+      #9270ff
+    );
+
+    color: #ffffff;
+    font-size: 20px;
+  }
+}

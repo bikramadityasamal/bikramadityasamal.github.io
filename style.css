@@ -2394,3 +2394,35 @@ a:focus-visible {
         transform: none;
     }
 }
+/* Desktop */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Service cards */
+.service-card {
+  padding: 25px;
+  border-radius: 16px;
+  height: 100%;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+}
